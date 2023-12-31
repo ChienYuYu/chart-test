@@ -83,6 +83,9 @@ import { fakeCO2, fakePM25, fakeLabels } from './fakeData.js'
   width: 50%;
   margin: 0 auto;
   overflow-x: scroll;
+  @media (max-width: 1200px) {
+    width: 90%;
+  }
   .my-chart {
     // width: 2000px;
     width: 1000px;

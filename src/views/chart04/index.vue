@@ -107,6 +107,9 @@ export default {
   width: 50%;
   margin: 0 auto;
   overflow-x: scroll;
+  @media (max-width: 1200px) {
+    width: 90%;
+  }
 
   .my-chart {
     // width: 2000px;
