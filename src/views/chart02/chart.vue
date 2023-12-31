@@ -16,22 +16,29 @@ export default {
           data: [],
           fill: false,
           yAxisID: 'chart_co2',
-          lineTension: 0, // 設置為0以禁用曲線
+          lineTension: 0.1, // 設置為0以禁用曲線
         },
         {
           label: 'PM2.5',
           backgroundColor: '#af0',
           borderColor: '#af0',
           data: [],
+          // pointRadius: [0, 0, 0, 5] ,
+          pointRadius: [],
           fill: false,
           yAxisID: 'chart_1',
-          lineTension: 0, // 設置為0以禁用曲線
+          lineTension: 0.1, // 設置為0以禁用曲線
         },
       ]
     },
     options: {
       responsive: true, // 預設true
       maintainAspectRatio: false, // 預設false
+      elements: {
+        point:{
+          radius: 0 // 圓點尺寸 / 0=沒有圓點
+        }
+      },
       tooltips: { // hover 顯示的設定
         backgroundColor: '#33333390',
         titleFontSize: 20,
@@ -108,12 +115,12 @@ export default {
             },
             gridLines: { //x軸網格線
               display: false,
-              color: "#888"
+              color: "#333"
             },
             scaleLabel: {
               display: false,
               labelString: '時間',
-              fontColor: '#fff',
+              fontColor: '#333',
               fontSize: 20
             },
           }
@@ -144,15 +151,25 @@ export default {
     },
   }),
 
+  created() {},
   mounted () {
     this.getFatherData();
+    this.setPointRadius();
     this.renderChart(this.chartdata, this.options)
   },
-  computed: {
-  },
+  computed: {},
   methods: {
     childFunc() {
       this.renderChart(this.chartdata, this.options)
+    },
+   
+    setPointRadius() {
+      this.chartdata.datasets[0].pointRadius = this.CO2Array.map((item, index)=> {
+        return index == this.chartdata.datasets[0].data.length -1 ? 7:0
+      })
+      this.chartdata.datasets[1].pointRadius = this.PM25Array.map((item, index)=> {
+        return index == this.chartdata.datasets[1].data.length -1 ? 7:0
+      })
     },
     getFatherData() {
       this.chartdata.datasets[0].data = this.CO2Array
