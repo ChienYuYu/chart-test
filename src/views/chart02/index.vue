@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h5>最後一筆資料才顯示圓點</h5>
+    <h4>最後一筆資料才顯示圓點</h4>
     <div class="chart-container">
       <chart class="my-chart" 
       ref="child_chart"
