@@ -6,6 +6,7 @@
       <router-link to="/chart02">chart02</router-link> |
       <router-link to="/chart03">chart03</router-link> |
       <router-link to="/chart04">chart04</router-link> |
+      <router-link to="/chart05">chart05</router-link> |
     </nav>
     <router-view/>
   </div>
