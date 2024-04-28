@@ -15,7 +15,7 @@ export default {
           borderColor: '#fa0',
           data: [],
           fill: false,
-          yAxisID: 'chart_co2',
+          yAxisID: 'chart_1',
           lineTension: 0.1, // 設置為0以禁用曲線
         },
         {
