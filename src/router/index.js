@@ -83,6 +83,13 @@ const routes = [
       return import('../views/chart09')
     }
   },
+  {
+    path: '/chart10',
+    name: 'chart10',
+    component: function () {
+      return import('../views/chart10')
+    }
+  },
 ]
 
 const router = new VueRouter({
